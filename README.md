@@ -22,7 +22,7 @@ Hrishikesh Viswanath<sup>1</sup> &emsp; Md Ashiqur Rahman<sup>1</sup> &emsp; Chi
 <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-4CAF50?style=for-the-badge&labelColor=F0F0F0"/></a>
 
 <br><br>
-<img src="assets/flyby_ncd.gif" width="850px" alt="Newer College: SHINE vs. NIEO"/>
+<img src="assets/flyby_ncd.webp" width="850px" alt="Newer College: SHINE vs. NIEO"/>
 <br>
 <em>Newer College (quad). Left: SHINE-Mapping. Right: the same octree and decoder trained with our curvature energy.</em>
 <br><br>
@@ -63,15 +63,15 @@ whose eigenvalues are the principal curvatures, so $\lVert S\rVert_F^2 = \kappa_
 ## Results
 
 <div align="center">
-<img src="assets/flyby_grid_ignatius.gif" width="850px" alt="Ignatius: all methods"/>
+<img src="assets/flyby_grid_ignatius.webp" width="850px" alt="Ignatius: all methods"/>
 <br>
 <em>Tanks and Temples, Ignatius: Base and the compared regularizers against ours.</em>
 <br><br>
 
 <table>
 <tr>
-<td align="center"><img src="assets/flyby_ignatius.gif" width="500px"/><br><em>Base vs. ours</em></td>
-<td align="center"><img src="assets/morph_ignatius.gif" width="330px"/><br><em>Base morphing onto ours; red marks where the surfaces disagree most</em></td>
+<td align="center"><img src="assets/flyby_ignatius.webp" width="500px"/><br><em>Base vs. ours</em></td>
+<td align="center"><img src="assets/morph_ignatius.webp" width="330px"/><br><em>Base morphing onto ours; red marks where the surfaces disagree most</em></td>
 </tr>
 </table>
 
