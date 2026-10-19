@@ -1,0 +1,108 @@
+# NIEO -- tanksandtemples/barn / diffcd. Exact training config behind this cell of the
+# paper's results; 25000 iterations. Paths are relative to the repo root.
+setting:
+  name: tanksandtemples_barn_diffcd
+  output_root: ./experiments/
+  pc_path: data/tanksandtemples/barn_kitti_format/tandt_ply
+  pose_path: data/tanksandtemples/barn_kitti_format/poses.txt
+  calib_path: ''
+  load_model: false
+  model_path: ''
+  first_frame_ref: false
+  begin_frame: 0
+  end_frame: 100000
+  every_frame: 3
+  device: cuda
+  gpu_id: '0'
+  pc_count_gpu_limit: 1000
+  global_shift_default: 21.3
+process:
+  min_range_m: 0.1
+  pc_radius_m: 15.0
+  min_z_m: -15.0
+  rand_downsample: false
+  vox_down_m: 0.01
+  rand_down_r: 0.2
+  estimate_normal: true
+  normal_radius_m: 0.1
+  normal_max_nn: 20
+sampler:
+  surface_sample_range_m: 0.03
+  surface_sample_n: 3
+  free_sample_begin_ratio: 0.5
+  free_sample_end_dist_m: 0.2
+  free_sample_n: 3
+octree:
+  leaf_vox_size: 0.02
+  tree_level_world: 13
+  tree_level_feat: 4
+  feature_dim: 8
+  poly_int_on: true
+  octree_from_surface_samples: true
+decoder:
+  mlp_level: 2
+  mlp_hidden_dim: 32
+  freeze_after_frame: 0
+loss:
+  ray_loss: false
+  main_loss_type: sdf_bce
+  sigma_sigmoid_m: 0.01
+  loss_weight_on: false
+  behind_dropoff_on: false
+  ekional_loss_on: true
+  weight_e: 0.1
+  hessian_loss_on: false
+  weight_h: 0.1
+  hessian_intrinsic_loss_on: false
+  weight_hi: 0.0001
+  hessian_l1_loss_on: false
+  weight_hl1: 0.01
+  minimal_surface_loss_on: false
+  weight_ms: 0.1
+  minimal_surface_eps_m: 0.1
+  hessian_frob_loss_on: false
+  weight_hf: 0.01
+  normal_align_loss_on: false
+  weight_na: 0.1
+  grad_hessian_align_loss_on: false
+  weight_gh: 0.01
+  grad_hessian_delta_per_m: 200.0
+  singular_hessian_loss_on: false
+  weight_sh: 1e-4
+  relaxed_eikonal_loss_on: false
+  weight_re: 0.1
+  relaxed_eikonal_sigma_min: 0.8
+  divergence_loss_on: false
+  weight_div: 0.01
+  siren_offsurface_loss_on: false
+  weight_so: 0.1
+  siren_alpha: 100.0
+  diffcd_loss_on: true
+  weight_diffcd: 0.1
+  diffcd_newton_steps: 2
+  diffcd_ref_count: 8192
+  stoch_precond_on: false
+  stoch_precond_sigma_m: 0.1
+  anneal_schedule: none
+  anneal_final_ratio: 0.0
+continual:
+  continual_learning_reg: false
+  lambda_forget: 0
+  window_replay_on: false
+  window_radius_m: 0
+optimizer:
+  iters: 25000
+  batch_size: 4096
+  learning_rate: 0.01
+  weight_decay: 1e-7
+eval:
+  wandb_vis_on: false
+  o3d_vis_on: false
+  vis_freq_iters: 25000
+  save_freq_iters: 25000
+  mesh_freq_frame: 1
+  mc_res_m: 0.01
+  mc_with_octree: true
+  mc_local: false
+  mc_vis_level: 2
+  save_map: false

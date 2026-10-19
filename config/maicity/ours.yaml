@@ -1,0 +1,79 @@
+# NIEO -- maicity / ours. Exact training config behind this cell of the
+# paper's results; 50000 iterations. Paths are relative to the repo root.
+setting:
+  name: maicity_ours
+  output_root: ./experiments/
+  pc_path: data/mai_city/ply/sequences/01/velodyne
+  pose_path: data/mai_city/ply/sequences/01/poses.txt
+  calib_path: data/mai_city/ply/sequences/01/calib.txt
+  load_model: false
+  model_path: ''
+  first_frame_ref: false
+  begin_frame: 0
+  end_frame: 100
+  every_frame: 1
+  device: cuda
+  gpu_id: '0'
+process:
+  min_range_m: 1.5
+  pc_radius_m: 50.0
+  min_z_m: -10.0
+  rand_downsample: false
+  vox_down_m: 0.05
+  rand_down_r: 0.2
+sampler:
+  surface_sample_range_m: 0.15
+  surface_sample_n: 3
+  free_sample_begin_ratio: 0.5
+  free_sample_end_dist_m: 1.0
+  free_sample_n: 6
+octree:
+  leaf_vox_size: 0.2
+  tree_level_world: 12
+  tree_level_feat: 3
+  feature_dim: 8
+  poly_int_on: true
+  octree_from_surface_samples: true
+decoder:
+  mlp_level: 2
+  mlp_hidden_dim: 32
+  freeze_after_frame: 0
+loss:
+  ray_loss: false
+  main_loss_type: sdf_bce
+  sigma_sigmoid_m: 0.05
+  loss_weight_on: false
+  behind_dropoff_on: false
+  ekional_loss_on: true
+  weight_e: 0.1
+  hessian_intrinsic_loss_on: true
+  weight_hi: 0.0381004
+  ours_volumetric_on: true
+  intrinsic_band_h_m: 100.0
+  grad_hessian_align_loss_on: true
+  weight_gh: 0.000465167
+  grad_hessian_delta_per_m: 0.0
+  minimal_surface_loss_on: true
+  weight_ms: 0.03
+  hessian_l1_loss_on: false
+continual:
+  continual_learning_reg: false
+  lambda_forget: 0
+  window_replay_on: false
+  window_radius_m: 0
+optimizer:
+  iters: 50000
+  batch_size: 8192
+  learning_rate: 0.01
+  weight_decay: 1e-7
+eval:
+  wandb_vis_on: false
+  o3d_vis_on: false
+  vis_freq_iters: 100000
+  save_freq_iters: 10000
+  mesh_freq_frame: 1
+  mc_res_m: 0.1
+  mc_with_octree: false
+  mc_local: false
+  mc_vis_level: 1
+  save_map: false
