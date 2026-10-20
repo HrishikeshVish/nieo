@@ -247,12 +247,7 @@ Ground-truth paths and thresholds for each dataset are in `DATASETS` at the top 
 ## Citation
 
 ```bibtex
-@inproceedings{viswanath2027nieo,
-  title     = {Neural Implicit Energy Optimization for LiDAR Mapping},
-  author    = {Viswanath, Hrishikesh and Rahman, Md Ashiqur and Lin, Chi and Conover, Damon and Bera, Aniket},
-  booktitle = {Proceedings of the IEEE/CVF Winter Conference on Applications of Computer Vision (WACV)},
-  year      = {2027}
-}
+
 ```
 
 ## Acknowledgments
