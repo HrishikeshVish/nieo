@@ -15,6 +15,8 @@ Hrishikesh Viswanath<sup>1</sup> &emsp; Md Ashiqur Rahman<sup>1</sup> &emsp; Chi
 <sup>1</sup>Department of Computer Science, Purdue University &emsp; <sup>2</sup>DEVCOM Army Research Laboratory
 </p>
 
+<a href="https://arxiv.org/abs/2610.28598"><img src="https://img.shields.io/badge/arXiv-2610.28598-B31B1B?style=for-the-badge&logo=arxiv&logoColor=B31B1B&labelColor=F0F0F0"/></a> &emsp;
+<a href="https://hrishikeshvish.github.io/nieo/"><img src="https://img.shields.io/badge/Project-Page-1A8F7A?style=for-the-badge&labelColor=F0F0F0"/></a> &emsp;
 <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.11-598BE7?style=for-the-badge&logo=python&logoColor=598BE7&labelColor=F0F0F0"/></a> &emsp;
 <a href="https://pytorch.org/"><img src="https://img.shields.io/badge/PyTorch-2.8-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=EE4C2C&labelColor=F0F0F0"/></a> &emsp;
 <a href="https://developer.nvidia.com/cuda-toolkit"><img src="https://img.shields.io/badge/CUDA-12.9-76B900?style=for-the-badge&logo=nvidia&logoColor=76B900&labelColor=F0F0F0"/></a> &emsp;
@@ -247,7 +249,12 @@ Ground-truth paths and thresholds for each dataset are in `DATASETS` at the top 
 ## Citation
 
 ```bibtex
-
+@article{viswanath2026neural,
+  title={Neural Implicit Energy Optimization for LiDAR Mapping},
+  author={Viswanath, Hrishikesh and Rahman, Md Ashiqur and Lin, Chi and Conover, Damon and Bera, Aniket},
+  journal={arXiv preprint arXiv:2610.28598},
+  year={2026}
+}
 ```
 
 ## Acknowledgments
